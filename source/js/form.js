@@ -1,4 +1,4 @@
-// Открытие формы
+/*------------ Открытие формы ------------*/
 (function () {
     var me = {};
     var form = document.querySelector('.form-container');
