@@ -1,9 +1,9 @@
 nav.nav
-    - var items = ['Home', 'About us', 'Our Approch', 'Our work']
-    each item in items
-        if item === 'Home'
-            a.nav__link.nav__link--active(href="#")= item
-        else
-            a.nav__link(href="#")= item
+    - var items = ['Home', 'About us', 'Our Approach', 'Our work']
+    - var dataItems = ['header', 'about', 'approach', 'work']
 
-        span.nav__icon
+    each item, key in items
+        if item === 'Home'
+            a.nav__link.nav__link--active(href="#" data-link=dataItems[key])= item
+        else
+            a.nav__link(href="#" data-link=dataItems[key])= item
