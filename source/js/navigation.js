@@ -1,11 +1,11 @@
 (function () {
     var me = {};
 
+    /*------------ Проверка на наличие класса active ------------*/
     me.toggleToActiveLink = function(target) {
 
         var links = document.querySelectorAll('.nav__link');
         var showedSection = target.dataset.link;
-        console.log(showedSection);
 
         for (var i = 0; i < links.length; i++) {
 
@@ -25,8 +25,9 @@
         var section = document.querySelector('.' + showedSection);
         var coords = section.getBoundingClientRect();
         var animateTime = 0.4;
+        var timerId;
 
-        var timerId = setInterval(function() {
+        timerId = setInterval(function() {
             if (document.body.scrollTop < coords.top) {
                 window.scrollBy(0, 10)
             } else {
@@ -34,6 +35,16 @@
             }
 
         }, animateTime || 0.6);
+
+        /*var timerId = setInterval(function() {
+            if (document.body.scrollTop < coords.top) {
+                window.scrollBy(0, 10)
+                console.log(document.body.scrollTop);
+            } else {
+                clearInterval(timerId);
+            }
+
+        }, animateTime || 0.6);*/
     }
 
     SK.navigation = me;
