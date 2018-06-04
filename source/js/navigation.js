@@ -25,26 +25,14 @@
         var section = document.querySelector('.' + showedSection);
         var coords = section.getBoundingClientRect();
         var animateTime = 0.4;
-        var timerId;
 
-        timerId = setInterval(function() {
+        var timerId = setInterval(function() {
             if (document.body.scrollTop < coords.top) {
                 window.scrollBy(0, 10)
             } else {
-                clearInterval(timerId);
+                clearInterval(timerId); //остановка на нужном блоке
             }
-
         }, animateTime || 0.6);
-
-        /*var timerId = setInterval(function() {
-            if (document.body.scrollTop < coords.top) {
-                window.scrollBy(0, 10)
-                console.log(document.body.scrollTop);
-            } else {
-                clearInterval(timerId);
-            }
-
-        }, animateTime || 0.6);*/
     }
 
     SK.navigation = me;

@@ -12,6 +12,10 @@
     padding: 41px 0 32px;
 
     @media (max-width: 1080px) {
+      flex-direction: row;
+    }
+
+    @media (max-width: 499px) {
       flex-direction: column;
     }
   }
@@ -71,12 +75,11 @@
 }
 
 .logo {
-  @media (max-width: 1080px) {
-    margin-left: 15px;
+  @media (min-width: 500px) and (max-width: 1080px) {
+    margin-left: 20px;
   }
 
-  @media (max-width: 1000px) {
-    margin-left: 0;
+  @media (max-width: 500px) {
     margin-bottom: 15px;
   }
 }
